@@ -1,15 +1,16 @@
 from time import sleep
 
-# acceleration value along x-axis from sensor
+# acceleration value along x-axis from sensor (accelerometer's x-axis is set up with the front and back of the car)
+# Later this data will be colleted from the accelerometer
 a1 = float(input("Enter the value of acceleration in the multiples of g at t=0.0 sec: "))
 a2 = float(input("Enter the value of acceleration in the multiples of g at t=0.1 sec: "))
+
 # Distance values from LiDARs
+# This value will be mocked with ultrasonic sensors due to the unavailability of LiDAR Sensors
+# The only difference between LiDAR and Ultrasonic sensors is that ultrasonic sensors are short ranged where as LiDAR can work for larger distances like 2-10 meters
 d1 = float(input("Enter the value of distance recorded in the left LiDAR"))
 d2 = float(input("Enter the value of distance recorded in the center LiDAR"))
 d3 = float(input("Enter the value of distance recorded in the right LiDAR"))
-
-#a1 = 0.132 # a in terms of g at t = 0.0
-#a2 = 0.128 # a in terms of g at t = 0.0
 
 g = 9.8
 a1 = a1*g
