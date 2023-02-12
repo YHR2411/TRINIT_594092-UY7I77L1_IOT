@@ -3,8 +3,9 @@ import board
 import busio
 from adafruit_adxl345 import ADXL345
 import serial
+from time import sleep
 
-#ultra sonic sensor#
+# Ultrasonic Sensor
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(27, GPIO.IN)
 def measure_distance():
@@ -30,7 +31,7 @@ try:
 except KeyboardInterrupt:
     GPIO.cleanup()
 
-#accelrometer#
+# Accelerometer
 i2c = busio.I2C(board.SCL, board.SDA)
 accelerometer = ADXL345(i2c)
 while True:
@@ -47,11 +48,9 @@ while True:
             print("Latitude: {} {}".format(gprmc[3], gprmc[4]))
             print("Longitude: {} {}".format(gprmc[5], gprmc[6]))
 
-from time import sleep
-
 # acceleration value along x-axis from sensor (accelerometer's x-axis is set up with the front and back of the car)
-a1 = float(input("Enter the value of acceleration in the multiples of g at t=0.0 sec: "))
-a2 = float(input("Enter the value of acceleration in the multiples of g at t=0.1 sec: "))
+a1 = x(0)
+a2 = x(0.1)
 
 # Distance values from LiDARs
 # This value are mocked with ultrasonic sensors due to the unavailability of LiDAR Sensors
